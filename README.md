@@ -1,2 +1,9 @@
-# Webscrape-word-search
-Parse webscraped text in browser
+# Webscrape Word Search
+
+This repository contains scripts (Javascript) to scrape a website for text and then search the scraped text for instances of a specific word and phrases/sentences around the word. The options for the user to load the scraped text and to specify a word to search for are provided in a browser with two buttons.  The following scripts and steps were used to generate the text parsing browser front end.
+
+1.  **scrape\_script.js**:  This script was used to scrape a website for text and store that text in a JSON file *webpage_output.json*.  The webpage used in this example was my Github webpage, but a different website could be used.  For this script to work a local server needed to be opened.  Python was used for this using the following at the command line: `$python3 -m http.server`.  *Node.js* was installed to run this scraping script.  The Node *Puppeteer* library was installed and used to provide the necessary web scraping functionality.  This script was run from command line as `$node scrape_script.js`.
+2.  **load\_json.js**:  With the local server available, this script loads the webscraped text in the JSON file into the browser.  This script is linked to a button in the browser *index.html*, so the user can load the scraped text by clicking the button.
+3.  **text\_parse.js**:  This script parses the scraped text and displays the results in the browser.  The user clicks a button and gives the user an option to enter a word to search for in the text.  The script will then generate a list of available phrases containing the word from the scraped text.  These results are also displayed in the browser.
+4.  **index.html**:  This is the main browser page that the user could interact with to pull up the scraped text and to search for a word with surrounding phrases in that text.
+5.  **word\_search\_from\_scraped\_text.png**:  This is a snapshot of how the browser could be used to display scraped text and then used to search for a word and its surrounding phrases in that text.  Buttons are present on the browser window to accomplish this.
